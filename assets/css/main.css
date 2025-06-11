@@ -1,0 +1,478 @@
+/* Fonts */
+:root {
+    --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Raleway", sans-serif;
+    --nav-font: "Poppins", sans-serif;
+}
+
+:root {
+    --background-color: #ffffff;
+    /* Background color for the entire website, including individual sections */
+    --default-color: #5a5a5a;
+    /* Default color used for the majority of the text content across the entire website */
+    --heading-color: #363636;
+    /* Color for headings, subheadings and title throughout the website */
+    --accent-color: #8a1538;
+    /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+    --surface-color: #fff3e1;
+    /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+    --contrast-color: #ffffff;
+    /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
+
+
+/* .light-background {
+  --background-color: #f4f5fe;
+  --surface-color: #ffffff;
+}
+
+.dark-background {
+  --background-color: #2563eb;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #2563eb;
+  --contrast-color: #ffffff;
+} */
+
+:root {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    font-family: var(--default-font);
+}
+
+a {
+    color: var(--contrast-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+}
+
+
+/*--------------------------------------------------------------
+# Global Button
+--------------------------------------------------------------*/
+ .button {
+    background-color: #ebc48b;
+    height: 45px;
+    border-radius: 6px;
+    margin-top: 39px;
+}
+
+ .btn-transform {
+    background-color: var(--accent-color);
+    transform: rotate(-4deg);
+    height: 45px;
+    border-radius: 6px;
+    transition: .3s;
+    color: var(--contrast-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80%;
+}
+
+ .btn-transform:hover {
+    transform: rotate(0deg);
+}
+.header {
+    background-color: var(--accent-color);
+    height: 75px;
+}
+
+.contact-info a {
+    font-size: 14px;
+}
+
+.contact-info button {
+    background-color: var(--contrast-color);
+    padding: 7px 22px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    color: var(--accent-color);
+    margin-left: 30px;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+
+@media (min-width: 1200px) {
+    .navmenu ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        align-items: center;
+    }
+
+    .navmenu>ul>li {
+        padding: 15px 14px;
+    }
+    .navmenu a,
+    .navmenu a:focus {
+        color: #ffffffcc;
+        font-size: 15px;
+        padding: 0 2px;
+        font-family: var(--nav-font);
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        transition: 0.3s;
+        position: relative;
+    }
+
+    .navmenu li:hover>a,
+    .navmenu .active,
+    .navmenu .active:focus {
+        color: var(--contrast-color);
+    }
+
+    .navmenu .dropdown ul {
+        margin: 0;
+        background: var(--surface-color);
+        display: block;
+        position: absolute;
+        visibility: hidden;
+        top: 55px;
+        transition: 0.3s;
+        border-radius: 5px;
+        z-index: 99;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .navmenu .dropdown ul li {
+        min-width: 200px;
+    }
+
+    .navmenu .dropdown ul li:hover {
+        background-color: var(--accent-color);
+    }
+
+    .navmenu .dropdown.active>a,
+    .navmenu .dropdown .dropdown.active>a {
+        color: var(--surface-color);
+    }
+
+    .navmenu .dropdown .dropdown>a .dropdown-indicator {
+        transition: transform 0.3s;
+    }
+
+    .navmenu .dropdown .dropdown.active>a .dropdown-indicator {
+        transform: rotate(90deg);
+    }
+
+    .navmenu .dropdown ul a {
+        padding: 10px 20px;
+        font-size: 15px;
+        text-transform: none;
+        color: var(--default-color);
+    }
+
+    .navmenu .dropdown ul a:hover {
+        color: var(--surface-color);
+    }
+
+    .navmenu .dropdown ul a i {
+        font-size: 12px;
+    }
+
+    .navmenu .dropdown:hover>ul {
+        opacity: 1;
+        top: 100%;
+        visibility: visible;
+
+    }
+
+    .navmenu .dropdown .dropdown>ul {
+        opacity: 0;
+        visibility: hidden;
+        right: -103%;
+        top: 0;
+    }
+
+    .navmenu .dropdown .dropdown.active>ul {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Mobile Navigation */
+@media (max-width: 1199px) {
+    .contact-info {
+        display: none !important;
+    }
+
+    .mobile-nav-toggle {
+        color: var(--contrast-color);
+        font-size: 28px;
+        line-height: 0;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .navmenu {
+        padding: 0;
+        z-index: 9997;
+    }
+
+    .navmenu ul {
+        display: none;
+        list-style: none;
+        position: absolute;
+        inset: 60px 20px 20px 20px;
+        padding: 10px 0;
+        margin: 0;
+        border-radius: 6px;
+        background-color: var(--contrast-color);
+        border: 1px solid var(--contrast-color);
+        box-shadow: none;
+        overflow-y: auto;
+        transition: 0.3s;
+        z-index: 9998;
+    }
+
+    .navmenu a,
+    .navmenu a:focus {
+        color: var(--accent-color);
+        padding: 10px 20px;
+        font-family: var(--nav-font);
+        font-size: 17px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        transition: 0.3s;
+    }
+
+    .navmenu a i,
+    .navmenu a:focus i {
+        font-size: 12px;
+        line-height: 0;
+        margin-left: 5px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+
+    .navmenu a i:hover,
+    .navmenu a:focus i:hover {
+        background-color: var(--accent-color);
+        color: var(--contrast-color);
+    }
+
+    .navmenu a:hover,
+    .navmenu .active,
+    .navmenu .active:focus {
+        background-color: var(--accent-color);
+        color: var(--contrast-color);
+    }
+
+    .navmenu .active i,
+    .navmenu .active:focus i {
+        background-color: var(--accent-color);
+        color: var(--contrast-color);
+        transform: rotate(180deg);
+    }
+
+    .mobile-nav-active {
+        overflow: hidden;
+    }
+
+    .mobile-nav-active .mobile-nav-toggle {
+        color: #fff;
+        position: absolute;
+        font-size: 32px;
+        top: 15px;
+        right: 15px;
+        margin-right: 0;
+        z-index: 9999;
+    }
+
+    .mobile-nav-active .navmenu {
+        position: fixed;
+        overflow: hidden;
+        inset: 0;
+        background: rgba(33, 37, 41, 0.8);
+        transition: 0.3s;
+    }
+
+    .mobile-nav-active .navmenu>ul {
+        display: block;
+    }
+}
+
+@media(max-width:767px) {
+    .header .logo img {
+        max-height: 38px;
+    }
+
+    .header .logo {
+        height: 68px;
+    }
+}
+
+
+/* banner section start */
+.banner {
+    background-image: url('../img/banner-img.png');
+    /* height: 85vh; */
+    width: 100%;
+    background-color: var(--background-color);
+}
+
+.banner .single-item {
+    padding-top: 50px;
+    width: 40%;
+    height: 30%;
+}
+
+.banner .single-item h1 {
+    text-align: center;
+    color: var(--accent-color);
+}
+
+.banner .bg-bnnr-img {
+    width: 100%;
+}
+
+.banner .curriculums{
+    text-align: center;
+    padding-top: 70px;
+}
+.banner .curriculums h5{
+    color: var(--accent-color);
+}
+@media(max-width:767px){
+    .banner .single-item{
+        width: 60%;
+    }
+    .banner .bg-bnnr-img{
+       display: none;
+    }
+    .banner .button{
+        margin-top: 10px;
+    }
+    .banner .curriculums{
+        padding-top: 20px;
+    }
+}
+/* features section start */
+.features{
+    background-color: var(--surface-color);
+    padding: 22px 0px;
+}
+.features  img{
+    width: 30px;
+}
+.features h5{
+    color: var(--accent-color);
+    margin: 0px;
+    margin-left: 5px; 
+    font-size: 18px;
+}
+.features .row > div{
+    border-right: 1px solid var(--accent-color);
+}
+@media(max-width:767px){
+    .features{
+        padding: 0px 30px;
+    }
+    .features .row > div{
+        border-right:none;
+        border-bottom: 1px solid var(--accent-color);
+        padding: 20px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+}
+
+/* about section start */
+.about{
+ margin-top: 100px;
+}
+.about .abt-img img{
+    position: relative;
+    left: 95px;
+}
+.about .abt-mission, .abt-vission{
+    background-color: var(--surface-color);
+    color: var(--accent-color);
+    padding: 20px;
+    display: flex;
+    max-height: 230px;
+    margin-top: 55px;
+    border-radius: 10px;
+
+}
+.about .abt-mission:hover, .abt-vission:hover{
+box-shadow: 10px 10px 0px -5px rgba(135,4,43,0.75);
+
+}
+.about .abt-mission img{
+    width: 100px;
+    position: relative;
+    top: -50px;
+}
+@media(max-width:1200px){
+    .about .abt-img img{
+    position: static;
+     margin-top: 50px;
+}
+}
+
+
+/* path section start */
+.path{
+    background-color:#f8f7f4 ;
+    margin-top: 100px;
+    padding: 50px 0px;
+}
+/* footer section start */
+.footer{
+    margin-top: 100px;
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+        padding: 50px 0px 0px 0px;
+
+}
+.footer ul{
+    list-style: none;
+    padding: 0px;
+    margin-bottom: 10px;
+}
+.footer ul li{
+    margin-bottom: 10px;
+    color: #ffffffc5;
+}
+.footer i{
+    margin-right: 25px;
+}
+.footer p, a {
+     color: #ffffffc5;
+}
